@@ -75,7 +75,6 @@ namespace :alert do
   end
 end
 
-after "deploy", "deploy:migrate"
 after "deploy", "deploy:cleanup"
 # Afer successful deploy notify via growl and email
 after "deploy", "alert:growl_deploy"
