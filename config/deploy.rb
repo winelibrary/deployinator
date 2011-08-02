@@ -1,16 +1,15 @@
 require 'bundler/capistrano'
-require 'capistrano/ext/multistage'
 require 'ruby-growl'
 
 
 server "192.0.2.176", :app, :web, :db, :primary => true
 
 set :application, "deployinator"
-set :repository,  "git@github.com/winelibrary/deployinator.git"
+set :repository,  "git@github.com:winelibrary/deployinator.git"
 set :scm, "git"
 set :deploy_via, :remote_cache
 set :git_enable_submodules, 1
-set :deploy_to, "/var/www/head_librarian/"
+set :deploy_to, "/var/www/deployinator/"
 set :branch, "master"
 set :user,  "deploy"
 set :group, "deploy"
