@@ -1,0 +1,33 @@
+{{< generic_single_push }}
+
+<!-- Stacks info -->
+<section id="info-bar" class="clearfix">
+    <ul>
+        <li class="heading">Version: </li>
+        <li>Staging &ndash; <span class="{{stack}}_staging_version">{{wine_library_staging_version}}</span> </li>
+    </ul>
+</section>
+
+
+<aside class="pushers">
+    <div class="stack-box">
+        <h2><span>02.</span>Deploy Staging {{stack}}</h2>
+        <form action="/dispatch" method="post" class="STAGING">
+            <input type="hidden" name="method" value="{{stack}}_staging_rsync">
+            <input type="hidden" name="stack" value="{{stack}}_staging">
+
+            <p class="stack-status">
+                <a href="/diff/{{stack}}/{{wine_library_staging_version}}/{{head_build}}" target="_blank">
+                    <span class="{{stack}}_staging_build">{{wine_library_staging_version}}</span>
+                    &rarr;
+                    <span class="{{stack}}_head_build">{{head_build}}</span>
+                </a>
+            </p>
+            {{#message_box?}}
+            <p class="form"><label for="msg">Message:</label></p>
+            <p class="form"><input type="text" name="msg" value="" class="textfield" id="msg"></p>
+            {{/message_box?}}
+            <p class="stack-push"><button class="button {{#disabled}} button-disabled" disabled="disabled{{/disabled}}" type="submit">Deploy Staging {{stack}}</button></p>
+        </form>
+    </div>
+</aside>

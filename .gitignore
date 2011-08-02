@@ -9,3 +9,12 @@ run_logs/current*
 .bundle/
 vendor/bundle
 .yardoc
+.DS_Store
+.bundle
+tmp/**/*
+public/system/*
+capybara*
+coverage/*
+coverage.data
+log/*.pid
+.rvmrc
