@@ -2,7 +2,7 @@ require 'bundler/capistrano'
 require 'ruby-growl'
 
 
-server "192.0.2.176", :app, :web, :db, :primary => true
+server "meltdown.winelibrary.com", :app, :web, :db, :primary => true
 
 set :application, "deployinator"
 set :repository,  "git@github.com:winelibrary/deployinator.git"
